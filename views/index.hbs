@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Microservices Status</title>
+  <style>
+    body { 
+      font-family: sans-serif; 
+      text-align: center; 
+    }
+    .status-table {
+      margin: 20px auto;
+      border-collapse: collapse;
+    border-radius:10px;
+      width: 80%;
+      overflow: hidden; 
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .status-table th, .status-table td {
+      border: 1px solid #ddd;
+      padding: 12px; 
+      text-align: center;
+    }
+    .status-table th { 
+      background-color: #f2f2f2; 
+    }
+    .status-table tr:nth-child(even) {
+      background-color: #f8f8f8;
+    }
+    .online { 
+      color: green; 
+      font-weight: bold;
+    }
+    .offline { 
+      color: red; 
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>System Status</h1>
+
+  <table class="status-table">
+    <tr>
+      <th>Service Name</th>
+      <th>Status</th>
+    </tr>
+    {{#each services}}
+      <tr>
+        <td>{{ name }}</td>
+        <td class="{{ class }}">{{ status }}</td> 
+      </tr>
+    {{/each}}
+  </table>
+
+</body>
+</html>
