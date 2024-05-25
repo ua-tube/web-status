@@ -16,7 +16,6 @@ async function bootstrap() {
   app.use(helmet.hidePoweredBy());
   app.use(helmet.contentSecurityPolicy());
 
-  app.useStaticAssets(join(process.cwd(), 'public'));
   app.setBaseViewsDir(join(process.cwd(), 'views'));
   app.setViewEngine('hbs');
 
