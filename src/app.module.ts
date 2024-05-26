@@ -25,10 +25,10 @@ import { HttpModule } from '@nestjs/axios';
         VIDEO_STORE_SVC_ORIGIN: Joi.string().uri().required(),
         HISTORY_SVC_ORIGIN: Joi.string().uri().required(),
         SEARCH_SVC_ORIGIN: Joi.string().uri().required(),
-      })
+      }),
     }),
     TerminusModule,
-    HttpModule
+    HttpModule,
   ],
   controllers: [AppController],
   providers: [AppService],
