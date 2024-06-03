@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import Joi from 'joi';
 import { TerminusModule } from '@nestjs/terminus';
 import { HttpModule } from '@nestjs/axios';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { HttpModule } from '@nestjs/axios';
         SEARCH_SVC_ORIGIN: Joi.string().uri().required(),
       }),
     }),
+    ScheduleModule.forRoot(),
     TerminusModule,
     HttpModule,
   ],
